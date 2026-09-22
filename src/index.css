@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-cream: #FAF7F2;
+    --brand-terracotta: #E05A47;
+    --brand-orange: #F27A35;
+    --brand-amber: #F7B049;
+    --brand-charcoal: #1F2421;
+    --surface-white: #FFFFFF;
+  }
+
+  body {
+    background-color: var(--bg-cream);
+    color: var(--brand-charcoal);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  #root {
+    min-height: 100vh;
+    width: 100%;
+  }
+}
+
+/* Plate inspired subtle circular shadows & soft outlines */
+.plate-shadow {
+  box-shadow: 0 10px 30px -5px rgba(224, 90, 71, 0.08), 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.plate-shadow-lg {
+  box-shadow: 0 20px 40px -10px rgba(31, 36, 33, 0.12), 0 8px 16px rgba(0, 0, 0, 0.04);
+}
+
+.plate-card-hover {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.plate-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -8px rgba(226, 85, 54, 0.14), 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.glass-dark {
+  background: rgba(31, 36, 33, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.03);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(224, 90, 71, 0.3);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(224, 90, 71, 0.6);
+}
+
+/* Custom pulse ring */
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 0.4; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-ring 3s infinite ease-in-out;
+}
